@@ -10,6 +10,8 @@ Kurulum yaptıktan sonra projeyi başlatmak için aşşağıdaki komutu kopyalay
 
 roslaunch line_following line_following.launch
 
+
+
 NOT: Kurulumu yaptıktan sonra ROS ortamınızı derlemeniz gerekmektedir. Bunu için aşşağıdaki komutları kullanabilirsiniz.
 
 cd
