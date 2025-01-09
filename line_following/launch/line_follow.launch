@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<launch>
+   <arg name="x_pos" default="-8.0"/>
+   <arg name="y_pos" default="-5.0"/>
+   <arg name="z_pos" default="0.0"/>
+   <arg name="roll" default="0.0"/>
+   <arg name="pitch" default="0.0"/>
+   <arg name="yaw" default="0.0"/>
+
+   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="world_name" value="$(find line_following)/worlds/world.world"/>
+      <arg name="paused" value="false"/>
+      <arg name="gui" value="true"/>
+      <arg name="headless" value="false"/>
+      <arg name="debug" value="false"/>
+   </include>
+
+  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+    <!-- Alttaki satır kamerayı eklyior hectora , başka sensörlerde ekler bakarsın. -->
+    <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro"/>     
+    <!-- Pozisyon argümanlarını ilet -->
+    <arg name="x" value="$(arg x_pos)"/>
+    <arg name="y" value="$(arg y_pos)"/>
+    <arg name="z" value="$(arg z_pos)"/>
+  </include>
+  
+  
+   <node name="hector_linefollow" pkg="line_following" type="line_follow.py" output="screen"
+         args="-urdf -model hector_quadrotor -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -param robot_description" />
+</launch>
+
