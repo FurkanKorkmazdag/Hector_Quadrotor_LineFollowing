@@ -1,18 +1,18 @@
-KURULUM
+INSTALLATION
 
-Kurulum yapmak için aşşağıdaki komutu kopyalayak terminale yapıştırmanız yeterli olacaktır.
+To perform the installation, simply copy the following command and paste it into the terminal.
 
 git clone https://github.com/FurkanKorkmazdag/Hector_Quadrotor_LineFollowing.git
 
-BAŞLATMA
+STARTING THE PROJECT
 
-Kurulum yaptıktan sonra projeyi başlatmak için aşşağıdaki komutu kopyalayarak terminale yapıştırmanız gerekmektedir.
+After completing the installation, you need to copy the following command and paste it into the terminal to start the project.
 
 roslaunch line_following line_following.launch
 
 
 
-NOT: Kurulumu yaptıktan sonra ROS ortamınızı derlemeniz gerekmektedir. Bunu için aşşağıdaki komutları kullanabilirsiniz.
+NOTE: After completing the installation, you need to build your ROS workspace. For this, you can use the following commands:
 
 cd
 
